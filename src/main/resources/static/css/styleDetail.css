@@ -1,0 +1,180 @@
+* {
+	margin: 0px;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+}
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	height: 100vh;
+	background: #fff;
+	margin-top: 50px;
+}
+header {
+	margin-top: -50px;
+	position: fixed;
+	width: 100%;
+	background: #000;
+	color: #fff;
+	align-items: center;
+	font-size: 30px;
+	font-weight: 700;
+	padding: 15px 50px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	margin-bottom: 80px;
+}
+.breadcrumb{
+	display: flex;
+	align-items: center;
+	color: #000;
+	margin: 100px 1120px 70px 0;
+}
+.breadcrumb a {
+	color: #000;
+	text-decoration: none;
+	background: 
+      linear-gradient(currentColor 0 0) 
+      0 100% /var(--d, 0) 2px 
+    no-repeat;
+  transition:0.2s;
+}
+.item-breadcrumb:nth-child(1):hover {
+	--d: 100%;
+	font-weight: 700;
+}
+.breadcrumb a:nth-last-child(1) {
+	font-weight: 700;
+}
+
+.breadcrumb span {
+	margin: 0 10px;
+}
+
+
+
+
+.livro {
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+}
+.capaLivro {
+	display: flex;
+	width: 615px;
+	justify-content: center;
+}
+img {
+	width: 60%;
+	height: 55vh;
+}
+
+
+.dadosLivro {
+	display: flex;
+	flex-direction: column;
+	width: 710px;
+}
+.dadosLivro h1 {
+	margin-bottom: 15px;
+	text-transform: capitalize;
+}
+.info {
+	display: flex;
+	margin-bottom: 5px;
+}
+.info span:nth-child(2n) {
+	margin-left: 10px;
+}
+.item-3 {
+	margin-top: 20px;
+	margin-left: 35px;
+	font-size: 20px;
+	color: #F00;
+}
+.Disponivel {
+	color: green;
+}
+.btnEmprestado {
+	text-decoration: none;
+	display: flex;
+	background: #ff3737;
+	color: #bd0000;
+	width: 170px;
+	height: 40px;
+	justify-content: center;   /*centraliza horizontal*/
+	align-items: center;       /*centraliza vertical*/
+	font-size: 18px;
+	cursor: not-allowed;
+	border-radius: 10px;
+	border: 2px solid #bd0000;
+	margin-right: 10px;
+	margin-top: 40px;
+	pointer-events: none;
+}
+
+.btn:hover {
+	border: 2px solid #ed9121;
+  	box-shadow: 1px 1px 10px #ed9121,
+              	-1px -1px 10px #ed9121;
+	cursor: pointer;
+}
+
+.buttons {
+	display: flex;
+}
+.btn {
+	text-decoration: none;
+	display: flex;
+	background: #000;
+	color: #fff;
+	width: 170px;
+	height: 40px;
+	justify-content: center;   /*centraliza horizontal*/
+	align-items: center;       /*centraliza vertical*/
+	font-size: 15px;
+	cursor: pointer;
+	border-radius: 10px;
+	border: 2px solid #c0c0c0;
+	margin-right: 20px;
+	margin-top: 40px;
+	margin-bottom: 70px;
+	text-transform: uppercase;
+	
+}
+.line:after {
+	content:"";
+	display:inline-block;
+	background: #d0d0d0;
+	width: 80%;
+	height: 1px;
+	margin-left: 65px;
+}
+
+.descricao {
+	margin-top: 20px;
+	text-align: justify;
+}
+.OutrosDadosLivro {
+	display: flex;
+	margin: 90px 0;
+	justify-content: space-around;
+}
+.items-livro {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.items-livro span {
+	color: #8e8e8e;
+}
+
+.items-livro span:nth-child(3) {
+	font-weight: 700;
+	color: #000;
+	margin-top: 15px;
+}
+

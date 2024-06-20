@@ -1,0 +1,180 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: sans-serif;
+	
+}
+
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100%;
+	background: #fff;
+	align-items: center;
+}
+.container header {
+	position: fixed;
+	width: 100%;
+	background: #000;
+	color: #fff;
+	align-items: center;
+	font-size: 30px;
+	font-weight: 700;
+	padding: 15px 50px;
+	letter-spacing: 3px;
+	text-transform: uppercase;
+	margin-bottom: 80px;
+	z-index: 1;
+}
+
+.buttons {
+	display: flex;
+	width: 100%;
+	justify-content: flex-end;
+	margin-top: 90px;
+}
+.btn {
+	font-family:'Material Symbols Outlined';
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 55px;
+	height: 55px;
+	font-size: 25px;
+	background: #000;
+	border-radius: 50px;
+	color: #fff;
+	text-decoration: none;
+	margin: 20px 8px 0 0;
+}
+
+.form {
+	display: flex;
+	width: 65%;
+	margin: 70px 0 90px 10px;
+	justify-content: center;
+}
+
+.form .txt-buscar {
+	width: 78%;
+	height: 50px; 
+	border: 2px solid #c1c1c1;
+	border-radius: 10px;
+	padding-left: 40px;
+	letter-spacing: 0.2em;
+}
+.form .txt-buscar:focus{
+	outline: none;
+	background: #c0c0c0;
+	color: #000;
+	border: 2px solid #000;
+}
+
+.form .btn-buscar {
+	color: #fff;
+	width: 100px;
+	height: 50px;
+	background: #000;
+	margin-left: 10px;
+	border-radius: 10px;
+	text-decoration: none;
+	font-size: 15px;
+	border: none;
+	cursor: pointer;
+	text-transform: uppercase;
+}
+.form .btn-buscar:hover, .cardLivro:hover, .btn:hover {
+	border: 2px solid #ed9121;
+  	box-shadow: 1px 1px 10px #ed9121,
+              	-1px -1px 10px #ed9121;
+	cursor: pointer;
+}
+
+.listaLivros {
+	display: flex;
+	width: 80%;
+	justify-content: space-around;
+	margin-top: 100px;
+	flex-wrap: wrap;
+}
+.listaLivros .cardLivro {
+	display: flex;
+	width: 35%;
+	border: 1px solid gray ;
+	border-radius: 20px;
+	margin-bottom: 50px;	
+}
+
+.listaLivros .capaLivro {
+	display: flex;
+}
+.listaLivros .capaLivro img{
+	width: 150px;
+	border-radius: 20px 0px 0px 20px;
+}
+.informacoesLivro {
+	margin-left: 10px;
+}
+.informacoesLivro p:nth-child(3n+1) {
+	margin-top: 25px;
+}
+.informacoesLivro p:nth-child(2) {
+	margin-top: 10px;
+}
+.informacoesLivro a {
+	text-decoration: none;
+	text-transform: capitalize;
+	font-size: 18px;
+	font-weight: 900;
+	color: #000;
+}
+.mnsgRetorno {
+	display: flex;
+	width: 60%;
+	height: 40px;
+	border-radius: 10px;
+	background: #b2c8ff;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	margin: 0 auto;
+	color: #0049ff;
+}
+
+@media (max-width: 1100px) {
+	.container header {
+		text-align: center;
+	}
+	
+	.listaLivros .cardLivro {
+		width: 70%;
+	}
+}
+
+@media (max-width: 600px) {
+	.listaLivros .cardLivro {
+		width: 85%;
+	}
+	
+	.form {
+		width: 90%;
+	}
+	.form .btn-buscar {
+		font-family: 'Material Symbols Outlined';
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		width: 50px;
+		height: 50px;
+		font-size: 25px;
+		border-radius: 50px;
+	}
+}
+
+@media (max-width: 350px) {
+	.listaLivros .cardLivro {
+		width: 100%;
+	}
+}

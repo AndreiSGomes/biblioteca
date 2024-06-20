@@ -1,0 +1,157 @@
+
+.container {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	height: 100vh;
+	align-items: center;
+	justify-content: center;
+}
+
+.formulario {
+	display: flex;
+	width: 60%;
+	height: 500px;
+	border-radius: 20px;
+	box-shadow: rgba(0, 0, 0, 0.60) 5px 2px 20px;
+	
+}
+
+.field-input, .btn {
+	width: 250px;
+	height: 40px;
+	margin: 7px 0;
+	border-radius: 10px;
+}
+.field-input{
+	display: flex;
+	letter-spacing: 1px;
+	border: 2px solid #c0c0c0;
+	padding-left: 13px;
+}
+.field-input:focus {
+	outline: none;
+	background: #c0c0c0;
+	border: 2px solid #000;
+}
+.formulario a:nth-child(2){
+	display: flex;
+	justify-content: flex-end;
+	text-decoration: none;
+	color: #000;
+	font-size: 14px;
+	margin-bottom: 20px;
+	background: 
+      linear-gradient(currentColor 0 0) 
+     100% 100% /var(--d, 0) 2px 
+    no-repeat;
+  	transition:0.2s;
+}
+.formulario a:nth-child(2):hover {
+	--d: 40%;
+}
+
+.btn {
+	background: #000;
+	color: #fff;
+	text-transform: uppercase;
+	cursor: pointer;
+	width: 265px;
+	border: 2px solid #000;
+	font-size: 15px;
+}
+.btn:hover {
+	border: 2px solid #ed9121;
+  	box-shadow: 1px 1px 10px #ed9121,
+              	-1px -1px 10px #ed9121;
+	cursor: pointer;
+}
+
+.form {
+	display: flex;
+	width: 45%;
+	background: #fff;
+	justify-content: center;
+	border-radius: 0 20px 20px 0;
+	padding-top: 20px;
+	text-align: center;
+}
+.form h1 {
+	text-align: center;
+	color: #000;
+	margin-bottom: 40px;
+	
+}
+.form .mnsg {
+	display: flex;
+	color: #e80000;
+	background: #fa9494;
+	width: 260px;
+	height: 60px;
+	margin-bottom: 15px;
+	font-size: 17px;
+	align-items: center;
+	border-radius: 10px;
+	
+}
+.options {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+	align-items: center;
+	font-size: 15px;
+}
+.options span {
+	padding-top: 10px;
+	color: #5e5e5e;
+}
+
+.options a {
+	text-decoration: none;
+	cursor: pointer;
+	color: #000;
+	font-size: 17px;
+	font-weight: 700;
+	padding-left: 5px;
+	background: 
+      linear-gradient(currentColor 0 0) 
+      0 100% /var(--d, 0) 2px 
+    no-repeat;
+  	transition:0.2s;
+
+}
+.options a:hover {
+	--d: 100%;
+	font-weight: 700;
+}
+.image {
+	display: flex;
+	width: 55%;
+	background: #fff;
+	align-items: center;
+	justify-content: center;
+	border-radius: 20px 0 0 20px;
+}
+.image img {
+	width: 90%;
+	height: 70%;
+}
+
+@media (max-width: 1400px) {
+	.image img{
+		height: 55%;
+	}
+@media (max-width: 1095px) {
+	.formulario {
+		width: 90%;
+	}
+	.form {
+		width: 100%;
+		border-radius: 10px;}
+	.image {
+		width: 0;
+	}
+}
+	
+}

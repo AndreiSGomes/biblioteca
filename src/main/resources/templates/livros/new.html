@@ -1,0 +1,71 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"> 
+    <link rel="stylesheet" href="/css/styleNew.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Cadastrar Livro</title>
+</head>
+<body>
+
+	<div class="container">
+		<header>
+			<span>Biblioteca Online</span>
+		</header>
+
+		<nav class="breadcrumb">
+			<a href="/" class="item-breadcrumb">Home</a>
+			<span class="material-symbols-outlined">navigate_next</span>
+			<a class="item-breadcrumb">Novo Livro</a>
+		</nav>
+
+		<form th:object="${livro}" action="/novo-livro" method="POST" class="form">
+			<div class="form-group">
+				<input type="text" class="form-input" placeholder="Título" th:field="*{titulo}" th:errorclass="temErro">
+				<span class="msg-erro" th:errors="*{titulo}"></span>
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-input" placeholder="Autor" th:field="*{autor}" th:errorclass="temErro">
+				<span class="msg-erro" th:errors="*{autor}"></span>
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-input" placeholder="Editora" th:field="*{editora}">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-input" placeholder="ISBN" th:field="*{isbn}">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-input" placeholder="Categoria" th:field="*{categoria}" th:errorclass="temErro">
+				<span class="msg-erro" th:errors="*{categoria}"></span>
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-input" placeholder="Ano" th:field="*{ano}">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-input" placeholder="Número de Páginas" th:field="*{numPag}">
+			</div>
+			<div class="form-group">
+				<select class="form-select" th:field="*{status}">
+					<option th:each="status : ${statusLivro}" th:value="${status}" th:text="${status}"></option>
+				</select>
+			</div>
+			
+			<div class="form-group">
+				<textarea class="campoDescricao" th:field="*{descricao}" th:errorclass="temErro"> </textarea>
+				<span class="msg-erro" th:errors="*{descricao}"></span>
+			</div>
+			
+			<div class="form-group">
+				<button type="submit" class="btn-cadastrar">Cadastrar</button>
+			</div>
+			<div class="form-group">
+				<a href="javascript:history.back()" class="btn-cancelar" role="button">Voltar</a>
+			</div>
+		</form>
+	</div>
+
+
+</body>
+</html>

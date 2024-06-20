@@ -1,0 +1,50 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"> 
+    <link rel="stylesheet" href="/css/styleIndex.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <title>Biblioteca</title>
+</head>
+<body>
+
+	
+	
+	<div class="container">
+		<header>
+			<span>Biblioteca Online</span>
+		</header>
+		<div class="buttons">
+			<a href="/novo-livro" class="btn" data-tooltip="Cadastrar novo livro">menu_book</a> 
+			<a href="/novo-usuario" class="btn">person_add</a>
+			<a href="" class="btn">description</a>
+		</div>
+		
+		<form method="POST" action="/" class="form">
+				<input type="search" class="txt-buscar" placeholder="Procure seu livro" name="buscaTitulo">
+				<button type="submit" class="btn-buscar">Buscar</button>
+		</form>
+    	
+		<div class="listaLivros">
+			<div class="cardLivro" th:each="livro : ${livros}">
+				<div class="capaLivro">
+					<img src="/images/background-book.jpg">
+				</div>
+				<div class="informacoesLivro">
+					<a th:text="${livro.titulo}" th:href="@{/livro-{livroId}(livroId = ${livro.id})}"></a>
+					<p th:text="${livro.autor}"></p>
+					<p th:text="${livro.categoria}"></p>
+					<p th:utext="${#strings.abbreviate(livro.descricao, 100)}"></p>
+				</div>
+			</div>
+			<div class="mnsgRetorno" th:if="${livros.isEmpty()}">
+				<span class="listaVazia">Nenhum livro encontrado.</span>
+			</div>
+			
+		</div>
+	</div>
+
+</body>
+</html>

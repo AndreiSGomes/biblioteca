@@ -1,0 +1,85 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"> 
+    <title>Livro Selecionado</title>
+     <link rel="stylesheet" href="/css/styleDetail.css">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+
+	<div class="container">
+		<header>
+			<span>Biblioteca Online</span>
+		</header>
+ 
+		<nav class="breadcrumb">
+			<a href="/" class="item-breadcrumb">Home</a>
+			<span class="material-symbols-outlined">navigate_next</span>
+			<a class="item-breadcrumb">Livro Selecionado</a>
+		</nav>
+
+
+		<div class="livro">
+			<div class="capaLivro">
+				<img src="/images/background-book.jpg">
+			</div>
+
+			<div class="dadosLivro">
+				<h1 th:text="${livro.titulo}"></h1>
+				
+				<div class="info item-1">
+					<span class="material-symbols-outlined">person</span>
+					<span th:text="${livro.autor}"></span>
+				</div>
+				
+				<div class="info item-2">
+					<span class="material-symbols-outlined">category</span>
+					<span th:text="${livro.categoria}"></span>
+				</div>
+				
+				<div class="info item-3">
+					<span th:text="${livro.status.toString}" th:class="${livro.status.toString}"></span>
+				</div>
+				
+				<div class="buttons">
+					<a th:href="@{/editar-livro-{livroId}(livroId = ${livro.id})}" class="btn">Editar</a>
+					<a th:href="@{/excluir-livro-{livroId}(livroId = ${livro.id})}" class="btn">Excluir</a>
+				</div>
+				<p class="line"></p>
+				<div class="descricao">
+					<p th:utext="${livro.descricao}"></p>
+				</div>
+				<p class="line"></p>
+				
+				<div class="OutrosDadosLivro">	
+					<div class="items-livro">
+						<span>ISBN</span>
+						<span class="material-symbols-outlined">barcode</span>
+						<span th:text="${livro.isbn}"></span>
+					</div>
+					<div class="items-livro">
+						<span>Editora</span>
+						<span class="material-symbols-outlined">location_city</span>
+						<span th:text="${livro.editora}"></span>
+					</div>
+					<div class="items-livro">
+						<span>Nº Páginas</span>
+						<span class="material-symbols-outlined">auto_stories</span>
+						<span th:text="${livro.numPag}"></span>
+					</div>
+					<div class="items-livro">
+						<span>Ano</span>
+						<span class="material-symbols-outlined">calendar_month</span>
+						<span th:text="${livro.ano}"></span>
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

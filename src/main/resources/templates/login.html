@@ -1,0 +1,47 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width"> 
+    <title>Login</title>
+     <link rel="stylesheet" href="/css/styleLogin.css">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+<body>
+	<div class="wave-header">
+	</div>
+	
+	
+	<div class="container">
+		<div class="formulario">
+			<div class="image">
+				<img src="/images/login-background.png">
+			</div>
+			<div class="form">
+				<form th:action="@{login}" method="POST">
+					<h1>Biblioteca Online</h1>
+					<div th:if="${param.error}" class="mnsg">
+						<span>Usuário ou senha incorreta! Tente novamente</span>
+					</div>
+					<div>
+						<input type="text" class="field-input" name="username" placeholder="Login">
+					</div>
+					<div>
+						<input type="password" class="field-input" name="password" placeholder="Senha">
+						<a href="">Esqueceu a senha?</a>
+					</div>
+					
+					<button type="submit" class="btn">Entrar</button>
+					
+					<div class="options">
+						<span>Ainda não tem conta?<a href="/novo-usuario">Cadastre-se</a></span> 	
+					</div>
+				</form>
+			</div>
+		</div>
+				
+	</div>
+
+</body>
+</html>
