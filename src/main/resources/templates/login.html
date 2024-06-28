@@ -19,16 +19,16 @@
 				<img src="/images/login-background.png">
 			</div>
 			<div class="form">
-				<form th:action="@{login}" method="POST">
+				<form th:object="${authRequisicao}" th:action="@{/login}" method="POST"> <!--th:action="@{login}"-->
 					<h1>Biblioteca Online</h1>
-					<div th:if="${param.error}" class="mnsg">
+					<div  class="mnsg" th:if="${param.error}"> <!-- th:if="${param.error}" -->
 						<span>Usuário ou senha incorreta! Tente novamente</span>
 					</div>
 					<div>
-						<input type="text" class="field-input" name="username" placeholder="Login">
+						<input type="text" class="field-input" name="username" placeholder="Login" th:field="*{login}">
 					</div>
 					<div>
-						<input type="password" class="field-input" name="password" placeholder="Senha">
+						<input type="password" class="field-input" name="password" placeholder="Senha" th:field="*{senha}">
 						<a href="">Esqueceu a senha?</a>
 					</div>
 					

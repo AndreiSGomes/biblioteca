@@ -1,10 +1,12 @@
 package com.example.biblioteca.dto;
 
-public record UsuarioDto(
+import com.example.biblioteca.enums.RoleEnum;
+
+public record UsuarioDto (
 	String nome,
 	String login,
 	String email,
-	String senha
-) {
-	
-}
+	String senha,
+	RoleEnum role
+) {}
+

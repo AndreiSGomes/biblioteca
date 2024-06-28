@@ -1,6 +1,7 @@
 package com.example.biblioteca.services.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.example.biblioteca.dto.UsuarioDto;
@@ -14,6 +15,9 @@ public class UsuarioServiceImpl implements UsuarioService {
 	@Autowired
 	private UsuarioRepository usuarioRepository;
 	
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	
 	@Override
 	public UsuarioDto criarUsuarioDto(UsuarioDto usuarioDto) {
 		
@@ -22,9 +26,10 @@ public class UsuarioServiceImpl implements UsuarioService {
 			throw new RuntimeException("Login já existe!");
 		}
 		
-		Usuario usuario = new Usuario(usuarioDto.nome(), usuarioDto.login(), usuarioDto.email(), usuarioDto.senha());
+		var passwordHash = passwordEncoder.encode(usuarioDto.senha());
+		Usuario usuario = new Usuario(usuarioDto.nome(), usuarioDto.login(), usuarioDto.email(), passwordHash, usuarioDto.role());
 		Usuario novoUsuario = usuarioRepository.save(usuario);
-		return new UsuarioDto(novoUsuario.getNome(), novoUsuario.getLogin(), novoUsuario.getEmail(), novoUsuario.getSenha());
+		return new UsuarioDto(novoUsuario.getNome(), novoUsuario.getLogin(), novoUsuario.getEmail(), novoUsuario.getSenha(), novoUsuario.getRole());
 	}
 	
 

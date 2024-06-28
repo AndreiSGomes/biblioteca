@@ -1,16 +1,14 @@
 * {
-	margin: 0 auto;
+	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
-	font-family: sans-serif;
-	
+	font-family: sans-serif;	
 }
 .container {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
 	background: #fff;
-	text-align: center;
 }
 .container header {
 	position: fixed;
@@ -40,7 +38,7 @@
       linear-gradient(currentColor 0 0) 
       0 100% /var(--d, 0) 2px 
     no-repeat;
-  	transition:0.2s;
+  transition:0.2s;
 }
 .breadcrumb .item-breadcrumb:nth-child(1):hover  {--d: 100%;font-weight: 700;}
 .breadcrumb .item-breadcrumb a:nth-last-child(1) {font-weight: 700;}
@@ -51,15 +49,27 @@
 
 
 
-
 .container .form {
 	display: flex;
 	flex-direction: column;
 	width: 100%;
+	align-items: center;
 }
+
+.msg-errors {
+	display: flex;
+	width: 500px;
+	flex-direction: column;
+	margin-bottom: 60px;
+}
+.msg {
+	font-size: 12px;
+	color: #F00;
+	margin-bottom: 5px;
+}
+
 .form-group {
 	display: flex;
-	width: 100%;
 }
 .form-input, .btn-cadastrar, .btn-cancelar{
 	width: 500px;
@@ -135,17 +145,6 @@ select:focus {
 	cursor: pointer;
 }
 
-
-
-
-
-
-
-
-.msg-erro {
-	font-size: 12px;
-	color: #F00;
-}
 
 
 

@@ -8,37 +8,45 @@
 <title>Cadastrar Usuário</title>
 </head>
 <body>
-		<div class="container">
-			<header>
-				<span>Biblioteca Online</span>
-			</header>
+	<div class="container">
+		<header>
+			<span>Biblioteca Online</span>
+		</header>
+		
+
+		<form th:object="${usuarioRequisicao}" action="/novo-usuario" method="POST" class="form">
+			<div class="msg-errors">
+				<span class="msg" th:errors="*{nome}"></span>
+				<span class="msg" th:errors="*{login}"></span>
+				<span class="msg" th:errors="*{senha}"></span>
+			</div>
+
+			<div class="form-group">
+				<input type="text" class="form-input" placeholder="Nome" th:field="*{nome}" th:errorclass="temErro">
+			</div>
+			<div class="form-group">
+				<input type="text" class="form-input" placeholder="E-mail" th:field="*{email}">
+			</div>
+			<div class="form-group">
+				<select class="form-select" th:field="*{role}">
+					<option th:each="role : ${roleUsuario}" th:value="${role}" th:text="${role}"></option>
+				</select>
+			</div>
 
 
-			<form action="/novo-usuario" method="POST" class="form">
-				<div class="form-group">
-					<input type="text" class="form-input" placeholder="Nome"> 
-				</div>
-				<div class="form-group">
-					<input type="text" class="form-input" placeholder="E-mail"> 
-				</div>
-				<div class="form-group">
-					<select class="form-select">
-						<option></option>
-					</select>
-				</div>
-				
-				
-				<div class="form-group">
-					<input type="text" class="form-input" placeholder="Login"> 
-				</div>
-				<div class="form-group">
-					<input type="text" class="form-input" placeholder="Senha"> 
-				</div>
 
-				<button type="submit" class="btn-cadastrar">Cadastrar</button>
-				<a href="javascript:history.back()" class="btn-cancelar" role="button">Voltar</a>
-			</form>
+			<div class="form-group">
+				<input type="text" class="form-input" placeholder="Login" th:field="*{login}" th:errorclass="temErro">
+			</div>
+			<div class="form-group">
+				<input type="password" class="form-input" placeholder="Senha" th:field="*{senha}" th:errorclass="temErro">
+			</div>
+
+			<button type="submit" class="btn-cadastrar">Cadastrar</button>
+			<a href="javascript:history.back()" class="btn-cancelar"
+				role="button">Voltar</a>
+		</form>
 	</div>
-	
+
 </body>
 </html>

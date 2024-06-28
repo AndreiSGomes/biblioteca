@@ -1,5 +1,5 @@
 * {
-	margin: 0px;
+	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
 	font-family: sans-serif;
@@ -7,14 +7,10 @@
 .container {
 	display: flex;
 	flex-direction: column;
-	align-items: center;
 	width: 100%;
-	height: 100vh;
-	background: #fff;
-	margin-top: 50px;
+	
 }
-header {
-	margin-top: -50px;
+.container header {
 	position: fixed;
 	width: 100%;
 	background: #000;
@@ -25,13 +21,14 @@ header {
 	padding: 15px 50px;
 	letter-spacing: 3px;
 	text-transform: uppercase;
-	margin-bottom: 80px;
 }
-.breadcrumb{
+.container .breadcrumb{
 	display: flex;
 	align-items: center;
 	color: #000;
-	margin: 100px 1120px 70px 0;
+	margin-top: 150px;
+	margin-bottom: 80px;
+	padding-left: 170px;
 }
 .breadcrumb a {
 	color: #000;
@@ -40,31 +37,25 @@ header {
       linear-gradient(currentColor 0 0) 
       0 100% /var(--d, 0) 2px 
     no-repeat;
-  transition:0.2s;
+  	transition:0.2s;
 }
-.item-breadcrumb:nth-child(1):hover {
-	--d: 100%;
-	font-weight: 700;
-}
-.breadcrumb a:nth-last-child(1) {
-	font-weight: 700;
-}
-
-.breadcrumb span {
-	margin: 0 10px;
-}
+.breadcrumb .item-breadcrumb:nth-child(1):hover  {--d: 100%;font-weight: 700;}
+.breadcrumb .item-breadcrumb a:nth-last-child(1) {font-weight: 700;}
+.breadcrumb .item-breadcrumb span {margin: 0 10px;}
+.breadcrumb a {margin: 0;padding: 0;} 
+.breadcrumb span {margin: 0;padding: 0 12px;} 
 
 
 
 
 .livro {
-	width: 80%;
+	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 }
 .capaLivro {
 	display: flex;
-	width: 615px;
+	width: 45%;
 	justify-content: center;
 }
 img {
@@ -76,22 +67,20 @@ img {
 .dadosLivro {
 	display: flex;
 	flex-direction: column;
-	width: 710px;
+	width: 50%;
 }
 .dadosLivro h1 {
 	margin-bottom: 15px;
 	text-transform: capitalize;
 }
 .info {
-	display: flex;
 	margin-bottom: 5px;
 }
 .info span:nth-child(2n) {
 	margin-left: 10px;
 }
 .item-3 {
-	margin-top: 20px;
-	margin-left: 35px;
+	margin-top: 30px;
 	font-size: 20px;
 	color: #F00;
 }
@@ -177,4 +166,48 @@ img {
 	color: #000;
 	margin-top: 15px;
 }
+
+
+
+
+
+@media(max-width: 700px) {
+
+	header {
+		text-align: center;
+	}
+	.container {
+		align-items: center;
+	}
+	.container .breadcrumb {
+		padding-left: 0;
+		justify-content: center;
+	}
+	.livro{
+		justify-content: center;
+	}
+	.capaLivro {
+		width: 400px;
+	}
+	.dadosLivro {
+		width: 360px;
+		justify-content: center;
+	}
+	img {
+	width: 90%;
+	height: 50vh;
+	}
+	.info {
+		padding: 0;
+	}
+	.OutrosDadosLivro {
+		display: flex;
+		flex-wrap: wrap;
+	}
+	.items-livro {
+		padding: 20px;
+		flex-basis: 2;
+	}
+}
+
 

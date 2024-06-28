@@ -22,13 +22,19 @@
 		</nav>
 
 		<form th:object="${livro}" action="/novo-livro" method="POST" class="form">
+			<div class="msg-errors">
+				<span class="msg" th:errors="*{titulo}"></span>
+				<span class="msg" th:errors="*{autor}"></span>
+				<span class="msg" th:errors="*{categoria}"></span>
+				<span class="msg" th:errors="*{descricao}"></span>
+			</div>
+			
 			<div class="form-group">
 				<input type="text" class="form-input" placeholder="Título" th:field="*{titulo}" th:errorclass="temErro">
-				<span class="msg-erro" th:errors="*{titulo}"></span>
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-input" placeholder="Autor" th:field="*{autor}" th:errorclass="temErro">
-				<span class="msg-erro" th:errors="*{autor}"></span>
+				
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-input" placeholder="Editora" th:field="*{editora}">
@@ -38,7 +44,6 @@
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-input" placeholder="Categoria" th:field="*{categoria}" th:errorclass="temErro">
-				<span class="msg-erro" th:errors="*{categoria}"></span>
 			</div>
 			<div class="form-group">
 				<input type="text" class="form-input" placeholder="Ano" th:field="*{ano}">
@@ -54,7 +59,6 @@
 			
 			<div class="form-group">
 				<textarea class="campoDescricao" th:field="*{descricao}" th:errorclass="temErro"> </textarea>
-				<span class="msg-erro" th:errors="*{descricao}"></span>
 			</div>
 			
 			<div class="form-group">
